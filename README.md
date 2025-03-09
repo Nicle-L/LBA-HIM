@@ -26,6 +26,5 @@ Lightweight Band-Adaptive Hyperspectral Image Compression with Feature Decouple 
    ```sh
    python train.py
 
-
 [1] Guo, Y., Tao, Y., Chong, Y., Pan, S., & Liu, M. (2023). "Edge-Guided Hyperspectral Image Compression With Interactive Dual Attention." IEEE Transactions on Geoscience and Remote Sensing, vol. 61, pp. 1-17.
 DOI: 10.1109/TGRS.2022.3233375.
