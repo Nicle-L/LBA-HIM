@@ -149,7 +149,7 @@ class CustomDataset_Cave(Dataset):
 
         hyper = np.float32(input_data['The Variable name of Cave'])
         # 检查维度是否需要转换
-        if hyper.shape != (50, 512, 512):  # 如果不是 (C, H, W) 格式，则进行转换
+        if hyper.shape != (50, 512, 512):  
             hyper = np.transpose(hyper, [2, 0, 1])  # Convert to (C, H, W)
 
         hyper = self.random_crop(hyper, crop_size=256)
@@ -162,10 +162,8 @@ class CustomDataset_Cave(Dataset):
         # Convert back to numpy and return as torch tensor
         hyper_crop = np.copy(hyper_crop)
         epsilon = 1e-6
-        # 归一化处理并避免除零
         input_min, input_max = np.min(hyper_crop), np.max(hyper_crop)
         input_image = (hyper_crop - input_min) / (input_max - input_min + epsilon)
 
-        # 转换为 Tensor
         input_image_tensor = torch.tensor(input_image, dtype=torch.float32)
         return input_image_tensor
