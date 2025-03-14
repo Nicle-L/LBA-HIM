@@ -1,4 +1,4 @@
-# LBA-Net
+# LBA-HIM
 Lightweight Band-Adaptive Hyperspectral Image Compression with Feature Decouple and Recurrent Model
 
 ## Dataset Preparation and Model Training Instructions
