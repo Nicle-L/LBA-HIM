@@ -71,10 +71,9 @@ def train(opt):
             bpp_total_avg = bpp_total / (input_data.size(1))
 
             loss = lamb * mse_avg + bpp_total_avg
-            psnr_avg = 10.0 * np.log10(1. / mse_avg.item())  # 计算PSNR
+            psnr_avg = 10.0 * np.log10(1. / mse_avg.item())  
             print(f'Epoch: {epoch}, Step: {step}, MSE: {mse_avg:.6f}, Bpppb: {bpp_total_avg:.2f}, PSNR: {psnr_avg:.2f}')
 
-            # 写入日志
             log_path = os.path.join(opt.out_dir_train, f'train_mse{int(opt.lmbda)}.log')
             with open(log_path, 'a') as fd:
                 fd.write(f'ep:{epoch} step:{step} loss:{loss.item():.6f} MSE:{mse_avg:.6f} '
@@ -95,13 +94,12 @@ def test(opt):
     with torch.no_grad():
         total_test_bpp = 0.0
         total_test_mse = 0.0
-        total_psnr = 0.0  # 用于存储总PSNR
+        total_psnr = 0.0  
         for step, input_data in enumerate(test_loader):
             input_data = input_data.to(device)
             mse_total = 0.0
             bpp_total = 0.0
 
-            # 初始化隐藏状态
             state_enc = torch.zeros(
                 (input_data.shape[0], 2, 64, input_data.shape[2] // 2, input_data.shape[3] // 2)).to(device=device)
             state_dec = torch.zeros(
