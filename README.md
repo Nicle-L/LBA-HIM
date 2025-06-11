@@ -25,6 +25,15 @@ Lightweight Band-Adaptive Hyperspectral Image Compression with Feature Decouple 
 
    ```sh
    python train.py
+   ```
+### 3. Weight 
+Link: https://pan.baidu.com/s/1OGlI4Gs-LKn4OJRDjx807g?pwd=vvbf Extract code: vvbf 
+### 4. Our Dataset 
+Link: https://pan.baidu.com/s/1BtZffhKCKaZGLC9_b3EK-Q?pwd=wqh4 Extract code: wqh4 
+The txt file for our cross-validation dataset is avirix2_file_list.txt. 
+The txt file name for the training set is train1.txt.
+The txt file name for the test set is test1.txt.
+please change the dataset paths as per our step by step procedure to ensure smooth training or testing. 
 
 [1] Guo, Y., Tao, Y., Chong, Y., Pan, S., & Liu, M. (2023). "Edge-Guided Hyperspectral Image Compression With Interactive Dual Attention." IEEE Transactions on Geoscience and Remote Sensing, vol. 61, pp. 1-17.
 DOI: 10.1109/TGRS.2022.3233375.
